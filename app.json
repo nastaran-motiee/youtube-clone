@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "HelloWorld",
-    "slug": "expo-template-default",
+    "name": "youtube-clone",
+    "slug": "youtube-clone",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -9,13 +9,15 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nnastaran83.youtubeclone"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.nnastaran83.youtubeclone"
     },
     "web": {
       "bundler": "metro",
@@ -36,6 +38,18 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "07e9180f-86ea-4167-bf2b-dd127e7550dd"
+      }
+    },
+    "owner": "nnastaran83",
+    "updates": {
+      "url": "https://u.expo.dev/07e9180f-86ea-4167-bf2b-dd127e7550dd"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }
