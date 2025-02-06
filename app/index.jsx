@@ -1,5 +1,5 @@
-import { Text, View } from "react-native";
-
+import App from "@/components/App";
+import { View } from "react-native";
 export default function Index() {
   return (
     <View
@@ -9,7 +9,7 @@ export default function Index() {
         alignItems: "center",
       } }
     >
-      <Text>Hi</Text>
+      <App />
     </View>
   );
 }
