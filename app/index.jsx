@@ -1,4 +1,4 @@
-import App from "@/components/App";
+import MainPage from "@/components/MainPage";
 import { View } from "react-native";
 export default function Index() {
   return (
@@ -9,7 +9,7 @@ export default function Index() {
         alignItems: "center",
       } }
     >
-      <App />
+      <MainPage />
     </View>
   );
 }

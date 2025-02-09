@@ -1,33 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, StyleSheet, TextInput, View } from "react-native";
 
-class SearchBar extends React.Component {
-    state = { userInput: "" };
+const SearchBar = ({ onFormSubmit }) => {
+    const [ userInput, setUserInput ] = useState("");
 
-    onInputChange = (text) => {
-        this.setState({ userInput: text });
+    const onInputChange = (text) => {
+        setUserInput(text);
     };
 
-    onFormSubmit = () => {
-        this.props.onFormSubmit(this.state.userInput);
+    const handleFormSubmit = () => {
+        onFormSubmit(userInput);
     };
 
-    render() {
-        return (
-            <View style={ styles.searchBar }>
-                <View style={ styles.inputContainer }>
-                    <TextInput
-                        style={ styles.input }
-                        placeholder="Search Video..."
-                        value={ this.state.userInput }
-                        onChangeText={ this.onInputChange }
-                    />
-                    <Button title="Search" onPress={ this.onFormSubmit } />
-                </View>
+    return (
+        <View style={ styles.searchBar }>
+            <View style={ styles.inputContainer }>
+                <TextInput
+                    style={ styles.input }
+                    placeholder="Search Video..."
+                    value={ userInput }
+                    onChangeText={ onInputChange }
+                />
+                <Button title="Search" onPress={ handleFormSubmit } />
             </View>
-        );
-    }
-}
+        </View>
+    );
+};
 
 const styles = StyleSheet.create({
     searchBar: {

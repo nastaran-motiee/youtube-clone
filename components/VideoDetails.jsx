@@ -13,14 +13,13 @@ const VideoDetails = ({ video }) => {
     } else {
         const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
         return (
-            <View style={ styles.container }>
-                <View style={ styles.videoContainer }>
+            <View >
+                <View >
                     { Platform.OS === 'web' ? (
                         <iframe
-                            width="100%"
-                            height="100%"
+
                             src={ videoSrc }
-                            frameBorder="0"
+                            style={ styles.videoContainer }
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                         ></iframe>
@@ -33,7 +32,7 @@ const VideoDetails = ({ video }) => {
                     <Text style={ styles.title }>{ video.snippet.title }</Text>
                     <Text style={ styles.description }>{ video.snippet.description }</Text>
                 </View>
-            </View>
+            </View >
         );
     }
 };
@@ -44,12 +43,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    container: {
-        flex: 1,
-        padding: 10,
-    },
+
     videoContainer: {
-        height: 200,
+
+        height: 300,
+        width: '100%'
     },
     video: {
         flex: 1,
@@ -58,9 +56,9 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     thumbnail: {
-        width: 100,
-        height: 100,
-        borderRadius: 50,
+        width: 20,
+        height: 20,
+        borderRadius: 20,
     },
     title: {
         fontSize: 18,
